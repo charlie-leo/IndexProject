@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Hover Demo</title>
+</head>
+<body>
+
+<div  style="height: 100vh; width: 100vw; display: flex; justify-content: center; align-content: center; align-items: center">
+    <div class="like" >
+    <img src="assets/like_icon.png" alt="thumb up symbol"/>
+    <div class="emoji" >
+        <div class="emoji__item emj"   >😊</div>
+        <div class="emoji__item emj" >😍</div>
+        <div class="emoji__item emj" >😅</div>
+        <div class="emoji__item emj" >😜</div>
+        <div class="emoji__item emj" >😓</div>
+        <div class="emoji__item emj" >😡</div>
+    </div>
+    <style>
+        /*Emoji css start*/
+        .emj:hover{
+            transform: scale(1) !important;
+            animation: ease 0.5s elevation;
+        }
+        .emoji {
+            display: none !important;
+            height: 50px;
+            background-color: white;
+            border-radius: 50px;
+            position: absolute;
+            top: -50px;
+            left: inherit;
+            right: inherit;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            /*@include flexBox(row, flex-start, center, center);*/
+            font-size: 40px;
+            padding: 5px 10px 2px 10px;
+            animation: ease-in-out 0.5s downUp;
+            box-shadow: 0 0 5px 1px #cccccc;
+        }
+        .emoji__item{
+            cursor: pointer;
+            animation: linear 0.5s 1 upDown forwards;
+            transform: translateY(0) scale(0);
+            padding: 5px 10px;
+        }
+        .emoji__item:nth-child(1){
+            animation-delay: 0s;
+        }
+        .emoji__item:nth-child(2){
+            animation-delay: 0.1s;
+        }
+        .emoji__item:nth-child(3){
+            animation-delay: 0.2s;
+        }
+        .emoji__item:nth-child(4){
+            animation-delay: 0.3s;
+        }
+        .emoji__item:nth-child(5){
+            animation-delay: 0.4s;
+        }
+        .emoji__item:nth-child(5){
+            animation-delay: 0.5s;
+        }
+        @keyframes elevation {
+            0%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(-6px);
+            }
+        }
+        @keyframes upDown {
+            0%{
+                transform: translateY(-2px) scale(0);
+            }
+            15%{
+                transform: translateY(-6px) ;
+            }
+            25%{
+                transform: translateY(1px) ;
+            }
+            50%{
+                transform: translateY(-6px) ;
+            }
+            75%{
+                transform: translateY(1px) ;
+            }
+            100%{
+                transform: translateY(0px) scale(1) ;
+            }
+        }
+        @keyframes downUp {
+            0%{
+                transform: translateY(40px);
+            }
+            25%{
+                transform: translateY(-10px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+        .like{
+            position: relative;
+            height: 50px;
+            width: 100px;
+            font-size: 25px;
+        }
+        .like:hover .emoji{
+            display: flex !important;
+        }
+        .emoji:hover{
+            display: flex !important;
+        }
+        /*Emoji css end*/
+    </style>
+
+</div>
+</div>
+
+</body>
+</html>
